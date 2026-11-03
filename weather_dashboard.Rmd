@@ -1,0 +1,107 @@
+---
+title: "New York Weather Explorer"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+```{r setup,include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+data("ny_noaa")
+
+weather = 
+  ny_noaa |>
+  filter(id == "USW00094728")|>
+  mutate(tmax = as.numeric(tmax) / 10,
+         tmin = as.numeric(tmin)/10,
+         prcp = as.numeric(prcp)/10)
+
+yearly_temp = 
+  weather|>
+  mutate(year = lubridate::year(date))|>
+  group_by(year)|>
+  summarise(
+    avg_tmax = mean(tmax, na.rm = T),
+    avg_tmin = mean(tmin, na.rm = T),
+    .groups = "drop"
+  )
+
+set.seed(100)
+
+tmax_tmin=
+  weather|>
+  filter(!is.na(tmin), !is.na(tmax))|>
+  slice_sample(n = 1000)
+
+monthly_prcp = 
+  weather|>
+  mutate(year = lubridate::year(date),
+         month = lubridate::month(date, label = T))|>
+  group_by(year, month)|>
+  summarize(
+    total_prcp = sum(prcp, na.rm = T),
+    .groups = "drop"
+  )
+
+monthly_prcp_avg = 
+  monthly_prcp|>
+  group_by(month)|>
+  summarise(
+    avg_monthly_prcp = mean(total_prcp),
+    .groups = "drop"
+  )
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Yearly average temperature
+```{r, echo=FALSE}
+plot_ly(data = yearly_temp,
+  x = ~year
+)|>
+  add_lines(
+    y = ~avg_tmax,
+    name = "Maximum temperature"
+  )|>
+  layout(
+    title = "Yearly average temperature",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Temperature")
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+### Daily minimum vs maximum temperature
+```{r, echo=FALSE}
+plot_ly(data = tmax_tmin, 
+        x = ~tmin, 
+        y = ~tmax, 
+        type = "scatter", 
+        mode = "markers",
+        marker = list(size = 5, opacity = .5))|>
+  layout(title = "Daily minimum vs maximum temperature",
+         xaxis = list(title = "Minimum temperature"),
+         yaxis = list(title = "Maximum temperature"))
+```
+
+### Average monthly total percipitation
+```{r, echo=FALSE}
+plot_ly(
+  data = monthly_prcp_avg,
+  x = ~month,
+  y = ~avg_monthly_prcp,
+  type = "bar",
+  marker = list(color = "pink")
+)|>
+  layout(
+    title = "Average monthly total precipitation",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Precipitation")
+  )
+```
+
