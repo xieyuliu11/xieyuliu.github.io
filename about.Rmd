@@ -1,0 +1,46 @@
+---
+title: "About"
+
+---
+
+## Education
+
+#### Columbia University
+Master of Science in Biostatistics | September 2026 - Present
+
+#### The University of British Columbia
+Bachelor of Science in Forest Science | September 2024 - May 2026
+
+#### Beijing Forestry University
+Bachelor of Science in Biotechnology | September 2021 - June 2024
+
+## Experience
+
+### Intern
+
+#### NTT DATA (China) — Product Data Analysis Intern | July 2025 – August 2025
+-	Analyzed open-source data using R and Python to examine the relationship temperature and reported thermal comfort
+-	Proposed interactive visualizations integrating temperature data and occupant comfort feedback across building areas
+-	Designed a survey incorporating clothing, thermal sensation, and personal preferences to complement sensor-based measurements of thermal comfort
+-	Proposed incorporating occupant feedback and solar temperature considerations into building temperature control
+
+### Academic Projects
+
+#### Ecological Contribution of Douglas-fir Downed Logs to Understory Vegetation,UBC | January 2025 – April 2025
+-	Designed a study comparing understory vegetation abundance, species richness, and coverage in plots with and without downed logs
+-	Reviewed papers and developed data collection protocols 
+-	Cleaned and analyzed plot and species data in R, conducted t-tests, and presented findings in an English research report and presentation
+
+#### Silver Maple Leaf Color Variation and GST Gene Function, BFU | July 2023 – June 2024
+-	Analyzed transcriptomic data to identify differentially expressed GST-related genes associated with leaf color variation
+-	Used BLAST for gene homology analysis and MEGA for phylogenetic tree construction and conserved domain analysis
+-	Identified a GST-related gene as a candidate for further investigation of the molecular mechanism underlying leaf color variation
+
+## Technical Skills
+- R
+- Python
+- ArcGIS Pro
+- QGIS
+- Microsoft Excel
+
+[back](index.html)

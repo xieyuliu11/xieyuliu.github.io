@@ -1,0 +1,21 @@
+name: "Personal Website"
+output_dir: "."
+
+navbar:
+  title: "Home"
+  right:
+    - text: "Resume"
+      href: about.html
+
+    - icon: fa-envelope fa-lg
+      href: mailto:xieyuliu11@gmail.com
+
+    - icon: fa-github fa-lg
+      href: https://github.com/xieyuliu11/
+
+    - text: "LinkedIn"
+      href: https://www.linkedin.com/in/xieyu-liu-0a9754434/
+
+output:
+  html_document:
+    theme: flatly

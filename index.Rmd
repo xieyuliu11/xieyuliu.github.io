@@ -1,0 +1,20 @@
+---
+title: "Home"
+
+---
+
+# Hi! I'm Xieyu Liu!
+
+Welcome to my personal website!
+
+I am currently a student studying biostatistics at Columbia University.
+
+## About Me
+
+My academic background includes biology, forestry, and public health. I am interested in exploring how data science and technology can contribute to public health.
+
+Check out my [Resume](about.html)!
+
+## Contact
+
+You can learn more about me through my [GitHub](https://github.com/xieyuliu11) and [LinkedIn](https://www.linkedin.com/in/xieyu-liu-0a9754434/)
