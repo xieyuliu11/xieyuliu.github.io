@@ -55,6 +55,8 @@ monthly_prcp_avg =
   )
 ```
 
+[← Back to Home](index.html)
+
 Column {data-width=650}
 -----------------------------------------------------------------------
 
@@ -104,4 +106,3 @@ plot_ly(
     yaxis = list(title = "Precipitation")
   )
 ```
-
